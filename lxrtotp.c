@@ -205,5 +205,5 @@ void hotp(const unsigned char *sbytes, time_t movingFactor, char *code){
 int main(int argc, char *argv[]) {
     unsigned char sbytes[10]; char code[7]; time_t now; if (argc < 2){exit(1);}
     if (!b32decode(argv[1], sbytes)){exit(1);}
-    now = time(NULL); hotp(sbytes, now / 30, code); fprintf(stdout, code);
+    now = time(NULL); hotp(sbytes, now / 30, code); fprintf(stdout, "%s\n", code);
 }
